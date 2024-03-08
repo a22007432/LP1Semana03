@@ -6,7 +6,12 @@ namespace PlayerPower
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Console.Write("Pick numb of players>> ");
+            int n = int.Parse(Console.ReadLine());
+
+            Console.WriteLine(n);
+
+
         }
     }
 }
