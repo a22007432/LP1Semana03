@@ -117,7 +117,7 @@ namespace HeroPerks
                     Console.WriteLine("Silent Jumper!");
                 }
 
-                if(oddSum % 2 == 0)
+                if((int) myperks % 2 == 0)
                 {
                     Console.WriteLine("No perks at all!");
                 }
