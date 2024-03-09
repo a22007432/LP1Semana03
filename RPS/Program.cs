@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Xml.XPath;
-using RPS.GameItem;
-using RPS.GameStatus;
+
 
 namespace RPS
 {
@@ -26,20 +25,29 @@ namespace RPS
 
         private static int RockPaperScissors(string player1, string player2)
         {
+
+            GameItem move1 = (GameItem)Enum.Parse(typeof(GameItem), player1);
+            GameItem move2 = (GameItem)Enum.Parse(typeof(GameItem), player2); 
+
+
+            GameStatus result = 0;
+
             if (player1 == player2)
             {
-                return 0; // Draw
+                result = GameStatus.Draw;
+                return (int)result; // Draw
             }
             if (((player1 == "Rock") && (player2 == "Scissors")) ||
                 ((player1 == "Scissors") && (player2 == "Paper")) ||
                 ((player1 == "Paper") && (player2 == "Rock")))
             {
-                result
-                return 1; // Player 1 wins
+                result = GameStatus.Player1Wins;
+                return (int) result; // Player 1 wins
             }
             else
-            {
-                return 2; // Player 2 wins
+            {   
+                result = GameStatus.Player2Wins;
+                return (int) result; // Player 2 wins
             }
         }
     }
